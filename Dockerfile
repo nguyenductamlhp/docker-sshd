@@ -2,9 +2,9 @@
 # SSH server
 ############################################################
 
-FROM trobz/supervisord:14.04
+FROM nguyenductamlhp/docker-supervisord:16.04
 
-MAINTAINER Michel Meyer <mmeyer@trobz.com>
+MAINTAINER Michel Meyer <mmeyer@trobz.com> Nguyen Duc Tam <nguyenductamlhp@gmail.com>
 
 
 # Install common dependencies
@@ -24,7 +24,7 @@ ADD config/vim/vim.tar.gz /tmp/setup
 
 # ssh
 
-RUN mkdir /var/run/sshd
+RUN mkdir -p /var/run/sshd
 RUN chmod 0755 /var/run/sshd
 
 # configure ssh server service with supervisord
